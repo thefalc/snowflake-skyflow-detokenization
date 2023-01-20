@@ -42,23 +42,6 @@ set it up within AWS Secrets Manager to be used by the Lambda function.
   * `VAULT_ID` - Your Skyflow Vault ID. Found on your Vault Details page.
   * `VAULT_URL` - Your Skyflow Vault URL. Found on your Vault Details page.
 
-#### Set environment variables
-The import data script and demo application need environment variables for your VAULT_ID, VAULT_URL,
-and SERVICE_ACCOUNT_KEY.
-
-1. From the vault details modal, copy the Vault ID.
-1. In your terminal, execute `export VAULT_ID=$VAULT_ID` replacing `$VAULT_ID` with the vault ID you
-copied.
-1. From the vault details modal, copy the Vault URL.
-1. In your terminal, execute `export VAULT_URL=$VAULT_URL` replacing `$VAULT_URL` with the vault URL
-you copied.
-1. Create a role with a policy for inserting and reading records for the persons table in the vault
-you created.
-1. Create a service account assigning the role.
-1. Open the downloaded credentials.json file and copy the contents.
-1. In your terminal, execute `export VAULT_URL=$SERVICE_ACCOUNT_KEY_DATA`, replacing
-`$SERVICE_ACCOUNT_KEY_DATA` with the contents of the credentials.json file you downloaded.
-
 ## Snowflake external function
 
 To make use of this function and start retrieving the original sensitive data values from SQL within Snowflake, you need to create an [external function](https://docs.snowflake.com/en/sql-reference/external-functions-introduction.html) in Snowflake that calls this Lambda function.
